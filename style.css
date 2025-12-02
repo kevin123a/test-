@@ -38,21 +38,28 @@ body {
     font-weight: bold;
 }
 
-/* TITIK TIGA MENU */
+/* FIX TITIK TIGA AGAR MUNCUL */
 .menu-wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 2000; /* pastikan di atas semua */
 }
 
 .menu-icon {
-    width: 28px;
+    width: 30px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2001; /* ikon paling atas */
 }
 
 .menu-icon div {
-    width: 28px;
-    height: 3px;
-    background: #000;
-    margin: 5px 0;
+    width: 30px;
+    height: 4px;
+    background: #000;  /* hitam solid */
+    margin: 4px 0;
     border-radius: 5px;
 }
 
