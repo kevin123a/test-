@@ -38,56 +38,90 @@ body {
     font-weight: bold;
 }
 
-.right a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
+/* TITIK TIGA MENU */
+.menu-wrapper {
+    position: relative;
 }
 
-.right a:hover {
-    color: #007bff;
-}
-
-/* DROPDOWN */
-.dropdown {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.dropbtn {
-    background: transparent;
-    border: none;
-    font-size: 16px;
+.menu-icon {
+    width: 28px;
     cursor: pointer;
 }
 
-.dropdown-content {
+.menu-icon div {
+    width: 28px;
+    height: 3px;
+    background: #000;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* DROPDOWN MENU */
+.menu-dropdown {
     display: none;
     position: absolute;
+    right: 0;
+    top: 50px;
     background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
     padding: 10px 0;
-    border-radius: 5px;
-    margin-top: 5px;
-    box-shadow: 0 2px 7px rgba(0,0,0,0.15);
+    width: 180px;
+    z-index: 999;
 }
 
-.dropdown:hover .dropdown-content {
+.menu-dropdown a {
     display: block;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 8px 20px;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #222;
+    color: black;
 }
 
-.dropdown-content a:hover {
+.menu-dropdown a:hover {
     background: #f0f0f0;
 }
 
-/* HERO */
+/* SHOW MENU CLASS */
+.show-menu {
+    display: block;
+}
+
+/* SUB MENU (BAHASA) */
+.sub-menu {
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.sub-menu span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sub-menu-content {
+    display: none;
+    background: #ffffff;
+    margin-top: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sub-menu:hover .sub-menu-content {
+    display: block;
+}
+
+.sub-menu-content a {
+    padding: 8px 20px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.sub-menu-content a:hover {
+    background: #eaeaea;
+}
+
+/* HERO SECTION */
 .hero {
     padding-top: 150px;
     text-align: center;
