@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Sinar Langit Hanoi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="left">
+            <img src="IMG_20251202_181832_452.png" alt="Logo" class="logo">
+            <h2 class="brand-text">PT Sinar Langit Hanoi</h2>
+        </div>
+
+        <div class="menu-wrapper">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="menu-dropdown" id="menuDropdown">
+                <a href="index-id.php">Beranda</a>
+                <a href="service-id.php">Layanan</a>
+                <a href="contact-id.php">Kontak</a>
+                <a href="https://client.arianoi.com" target="_blank">Client</a>
+
+                <div class="sub-menu">
+                    <span>Bahasa ▾</span>
+                    <div class="sub-menu-content">
+                        <a href="index-id.php">Indonesia</a>
+                        <a href="index.php">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Menguatkan bisnis Anda dengan pertumbuhan cerdas di seluruh Asia Tenggara</h1>
+        <p>Kami membantu bisnis tumbuh lebih kuat melalui strategi yang jelas dan kemitraan terpercaya.</p>
+
+        <a href="service-id.php" class="btn-explore">Jelajahi Layanan</a>
+    </section>
+
+    <!-- PHOTO SECTION -->
+    <section class="photos">
+        <div class="photo-box photo1"></div>
+        <div class="photo-box photo2"></div>
+        <div class="photo-box photo3"></div>
+        <div class="photo-box photo4"></div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info">
+        <h3>Informasi</h3>
+
+        <div class="info-grid">
+
+            <a class="info-item" href="https://instagram.com" target="_blank">■ Instagram</a>
+            <a class="info-item" href="https://wa.me/628xxxx" target="_blank">■ WhatsApp</a>
+
+            <a class="info-item" href="https://client.arianoi.com" target="_blank">■ Client</a>
+            <a class="info-item" href="service-id.php">■ Layanan</a>
+
+            <a class="info-item" href="#">■ Live Chat</a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>2025 © PT Sinar Langit Hanoi. Seluruh hak cipta dilindungi.</p>
+    </footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menuDropdown").classList.toggle("show-menu");
+}
+</script>
+
+</body>
+</html>
