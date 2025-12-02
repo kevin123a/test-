@@ -164,10 +164,10 @@ body {
 }
 
 /* contoh jika kamu taruh gambar: */
-.photo1 { background-image: url("img/foto1.jpg"); }
-.photo2 { background-image: url("img/foto2.jpg"); }
-.photo3 { background-image: url("img/foto3.jpg"); }
-.photo4 { background-image: url("img/foto4.jpg"); }
+.photo1 { background-image: url("foto1.jpg"); }
+.photo2 { background-image: url("foto2.jpg"); }
+.photo3 { background-image: url("foto3.jpg"); }
+.photo4 { background-image: url("foto4.jpg"); }
 
 /* INFO SECTION */
 .info {
