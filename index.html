@@ -1,154 +1,70 @@
-<?php
-// PT Sinar Langit Hanoi — Konsultan Manajemen (KBLI 70209)
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Sinar Langit Hanoi — Management Consulting</title>
+    <title>PT Sinar Langit Hanoi</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="nav-inner">
-        <div class="logo">
-            <span class="logo-mark">SLH</span>
-            <div class="logo-text">
-                <span class="logo-title">PT Sinar Langit Hanoi</span>
-                <span class="logo-sub">Management Consulting · KBLI 70209</span>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="left">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h2 class="brand-text">PT Sinar Langit Hanoi</h2>
+        </div>
+
+        <div class="right">
+            <a href="index.php">Home</a>
+            <a href="service.php">Service</a>
+            <a href="contact.php">Contact</a>
+            <a href="https://client.arianoi.com" target="_blank">Client</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Bahasa</button>
+                <div class="dropdown-content">
+                    <a href="#">Indonesia</a>
+                    <a href="#">English</a>
+                </div>
             </div>
         </div>
-        <nav class="nav-menu">
-            <a href="#profile" class="nav-btn">Profile</a>
-            <a href="#services" class="nav-btn">Services</a>
-            <a href="#contact" class="nav-btn">Contact</a>
-            <a href="https://client.arianoi.com" target="_blank" class="nav-btn nav-btn-accent">Client Portal</a>
-            <a href="https://app.arianoi.com" target="_blank" class="nav-btn">Apps</a>
-            <a href="https://internal.arianoi.com" target="_blank" class="nav-btn">Internal</a>
-            <a href="#about" class="nav-btn">About Us</a>
-            <a href="#" class="nav-btn">EN / ID</a>
-        </nav>
-    </div>
-</header>
+    </header>
 
-<section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <p className="hero-tagline">Corporate Management Advisory</p>
-        <h1>Structured Strategy for Sustainable Growth</h1>
-        <p class="hero-sub">
-            PT Sinar Langit Hanoi mendampingi perusahaan dalam merancang strategi, 
-            mengoptimalkan operasi, dan memperkuat struktur organisasi secara profesional.
-        </p>
-        <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Request Consultation</a>
-            <a href="#services" class="btn btn-outline">Explore Services</a>
-        </div>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Empowering your business with smarter growth across Southeast Asia</h1>
+        <p>We help businesses grow stronger through clear strategies and trusted partnership</p>
 
-<main>
-    <!-- PROFILE -->
-    <section id="profile" class="section">
-        <div class="section-header">
-            <h2>Company Profile</h2>
-            <div class="section-underline"></div>
-        </div>
-        <div class="section-content">
-            <p>
-                PT Sinar Langit Hanoi adalah perusahaan konsultan manajemen yang berfokus pada
-                transformasi bisnis, efisiensi operasional, dan penguatan tata kelola. 
-                Kami melayani perusahaan nasional dan regional dengan pendekatan korporat, 
-                terukur, dan berbasis data.
-            </p>
+        <a href="service.php" class="btn-explore">Explore Services</a>
+    </section>
+
+    <!-- PHOTO SECTION -->
+    <section class="photos">
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info">
+        <h3>Information</h3>
+
+        <div class="info-list">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://wa.me/628xxxx" target="_blank">WhatsApp</a>
+            <a href="https://client.arianoi.com" target="_blank">Client Area</a>
+            <a href="service.php">Service</a>
+            <a href="#">Live Chat</a>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section section-soft">
-        <div class="section-header">
-            <h2>Our Services</h2>
-            <div class="section-underline"></div>
-        </div>
-        <div class="services-grid">
-            <article class="service-card">
-                <h3>Strategic Business Advisory</h3>
-                <p>Penyusunan dan penyelarasan strategi bisnis jangka pendek dan jangka panjang.</p>
-            </article>
-            <article class="service-card">
-                <h3>Operational Excellence</h3>
-                <p>Optimalisasi proses kerja, produktivitas, dan efisiensi biaya operasional.</p>
-            </article>
-            <article class="service-card">
-                <h3>Organizational Planning</h3>
-                <p>Desain struktur organisasi, peran, dan governance yang jelas dan efektif.</p>
-            </article>
-            <article class="service-card">
-                <h3>SOP & Business Process</h3>
-                <p>Perancangan SOP, alur kerja, dan standardisasi proses utama perusahaan.</p>
-            </article>
-            <article class="service-card">
-                <h3>Risk & Compliance</h3>
-                <p>Identifikasi risiko, pengendalian internal, dan penguatan kepatuhan.</p>
-            </article>
-            <article class="service-card">
-                <h3>Business Improvement</h3>
-                <p>Program perbaikan berkelanjutan berbasis indikator kinerja yang terukur.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <div class="section-header">
-            <h2>About Us</h2>
-            <div class="section-underline"></div>
-        </div>
-        <div class="section-content two-columns">
-            <p>
-                Kami menggabungkan pengalaman praktis di dunia korporasi dengan metodologi 
-                konsultan manajemen modern. Fokus kami adalah memberikan rekomendasi yang 
-                tidak hanya konseptual, tetapi dapat diimplementasikan dan dijaga keberlanjutannya.
-            </p>
-            <p>
-                Setiap engagement dimulai dari pemahaman mendalam terhadap konteks bisnis klien,
-                diikuti dengan analisis, desain solusi, pendampingan implementasi, hingga 
-                monitoring hasil. Kami bekerja erat dengan manajemen dan tim internal klien.
-            </p>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section-soft">
-        <div class="section-header">
-            <h2>Contact</h2>
-            <div class="section-underline"></div>
-        </div>
-        <div class="contact-layout">
-            <div class="contact-info">
-                <p>Silakan hubungi kami untuk diskusi awal atau permintaan proposal:</p>
-                <p><strong>Email:</strong> contact@arianoi.com</p>
-                <p><strong>WhatsApp:</strong> +62 xxx xxxx xxxx</p>
-            </div>
-            <form class="contact-form">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Work Email" required>
-                <input type="text" name="company" placeholder="Company Name">
-                <textarea name="message" rows="4" placeholder="Tell us about your needs"></textarea>
-                <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
-            </form>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="footer-inner">
-        <span>© 2025 PT Sinar Langit Hanoi · Management Consulting</span>
-        <span>Part of arianoi.com</span>
-    </div>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>2025 © PT Sinar Langit Hanoi. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
