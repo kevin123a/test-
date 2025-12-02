@@ -16,17 +16,26 @@
             <h2 class="brand-text">PT Sinar Langit Hanoi</h2>
         </div>
 
-        <div class="right">
-            <a href="index.php">Home</a>
-            <a href="service.php">Service</a>
-            <a href="contact.php">Contact</a>
-            <a href="https://client.arianoi.com" target="_blank">Client</a>
+        <!-- TITIK TIGA MENU -->
+        <div class="menu-wrapper">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
 
-            <div class="dropdown">
-                <button class="dropbtn">Bahasa</button>
-                <div class="dropdown-content">
-                    <a href="#">Indonesia</a>
-                    <a href="#">English</a>
+            <div class="menu-dropdown" id="menuDropdown">
+                <a href="index.php">Home</a>
+                <a href="service.php">Service</a>
+                <a href="contact.php">Contact</a>
+                <a href="https://client.arianoi.com" target="_blank">Client</a>
+
+                <div class="sub-menu">
+                    <span>Bahasa ▼</span>
+                    <div class="sub-menu-content">
+                        <a href="#">Indonesia</a>
+                        <a href="#">English</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,11 +45,10 @@
     <section class="hero">
         <h1>Empowering your business with smarter growth across Southeast Asia</h1>
         <p>We help businesses grow stronger through clear strategies and trusted partnership</p>
-
         <a href="service.php" class="btn-explore">Explore Services</a>
     </section>
 
-    <!-- PHOTO SECTION -->
+    <!-- FOTO -->
     <section class="photos">
         <div class="photo-box"></div>
         <div class="photo-box"></div>
@@ -48,13 +56,12 @@
         <div class="photo-box"></div>
     </section>
 
-    <!-- INFO SECTION -->
+    <!-- INFO -->
     <section class="info">
         <h3>Information</h3>
-
         <div class="info-list">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://wa.me/628xxxx" target="_blank">WhatsApp</a>
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://wa.me/628xxxx">WhatsApp</a>
             <a href="https://client.arianoi.com" target="_blank">Client Area</a>
             <a href="service.php">Service</a>
             <a href="#">Live Chat</a>
@@ -65,6 +72,12 @@
     <footer>
         <p>2025 © PT Sinar Langit Hanoi. All Rights Reserved.</p>
     </footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menuDropdown").classList.toggle("show-menu");
+}
+</script>
 
 </body>
 </html>
