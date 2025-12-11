@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arianoi — PT Sinar Langit Hanoi (EN)</title>
+  <link rel="stylesheet" href="../02style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="../logo.png" alt="PT Sinar Langit Hanoi logo">
+    <span class="brand">PT Sinar Langit Hanoi</span>
+  </div>
+
+  <!-- Hamburger visible on all screen sizes to keep header clean -->
+  <button id="hamburgerBtn" class="hamburger" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+  </button>
+
+  <!-- Menu is hidden by default; includes nav links and language buttons -->
+  <nav class="nav-menu" id="menu" aria-label="Main navigation" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="service.html">Service</a>
+    <a href="contact.html">Contact</a>
+
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button class="active" aria-pressed="true" data-lang="en" title="English">EN</button>
+      <button aria-pressed="false" data-lang="id" title="Indonesian" onclick="location.href='../id/index.html'">ID</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Empowering your business with smarter growth across Southeast Asia</h1>
+    <p class="subtitle">We help businesses grow stronger through clear strategies and trusted partnership.</p>
+
+    <a class="btn-primary" href="https://form.arianoi.com/1.php" target="_blank" rel="noopener">Start Service</a>
+  </section>
+
+  <section class="contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Information</h2>
+
+    <p>Email: <a href="mailto:support@arianoi.com">support@arianoi.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6289518327435" target="_blank" rel="noopener">wa.me/6289518327435</a></p>
+    <p>Instagram: <a href="https://instagram.com/arianoi_asia" target="_blank" rel="noopener">@arianoi_asia</a></p>
+    <p>Address: Jl. Nakula, PT Sinar Langit Hanoi, Tanjunganom, Nganjuk, Jawa Timur, Indonesia 64483</p>
+  </section>
+</main>
+
+<footer>
+  2025 PT Sinar Langit Hanoi. All Rights Reserved.
+</footer>
+
+<script>
+/* Menu toggle — keeps header clean. Language buttons live inside menu.
+   This script updates aria attributes and closes menu on outside click or ESC. */
+(function () {
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('menu');
+  const langButtons = menu.querySelectorAll('.lang-switch button');
+
+  function setExpanded(expanded) {
+    btn.setAttribute('aria-expanded', String(expanded));
+    menu.classList.toggle('show', expanded);
+    menu.setAttribute('aria-hidden', String(!expanded));
+    btn.classList.toggle('is-open', expanded);
+  }
+
+  btn.addEventListener('click', function () {
+    const opening = !menu.classList.contains('show');
+    setExpanded(opening);
+  });
+
+  // close on ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  // close when a nav link is clicked
+  Array.from(menu.querySelectorAll('a')).forEach(function (link) {
+    link.addEventListener('click', function () { setExpanded(false); });
+  });
+
+  // language button behavior: visually mark active (client-side).
+  langButtons.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      // If the button has a navigation (like the ID button above), the page will navigate.
+      // Otherwise, just mark active state.
+      langButtons.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-pressed', 'true');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
