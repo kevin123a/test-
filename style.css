@@ -1,67 +1,46 @@
-/* ==========================================================================
-   Refined stylesheet — improved variables, responsiveness, accessibility,
-   smoother animations, and better contrast/fallbacks.
-   ========================================================================== */
+/* Updated stylesheet: keeps header clean (logo + brand + hamburger),
+   ensures hamburger is always visible, and places language buttons inside the menu.
+   (Adapted from the earlier refined stylesheet.) */
 
 /* -----------------------------------------
    Variables & Base
    ----------------------------------------- */
 :root{
-  /* Colors */
   --bg: #d4d9df;
   --surface: #ffffff;
-  --primary: #004b66;       /* dark teal */
-  --primary-strong: #003344;/* brand dark */
-  --accent: rgba(0,180,200,0.28); /* header glass tint (used only as overlay) */
-  --nav-bg: rgba(0,110,140,0.92);
+  --primary: #004b66;
+  --primary-strong: #003344;
+  --nav-bg: rgba(0,110,140,0.94);
   --muted: #6b7280;
   --border: rgba(0,0,0,0.08);
 
-  /* Spacing & sizes */
   --gutter: 20px;
   --header-height: 70px;
   --radius: 10px;
-  --shadow-1: 0 4px 12px rgba(0,0,0,0.12);
+  --shadow-1: 0 6px 18px rgba(0,0,0,0.12);
 
-  /* Typography */
   --base-font: "Inter", Arial, sans-serif;
   --text-color: #1a1a1a;
   --max-content-width: 880px;
 }
 
-/* Reset (kept minimal + box model) */
+/* Reset */
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-}
+*::after { box-sizing: border-box; }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   font-family: var(--base-font);
   background: var(--bg);
   color: var(--text-color);
   line-height: 1.6;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
   margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* Respect user preference for reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
-}
-
-/* -----------------------------------------
-   Utility container
-   ----------------------------------------- */
+/* container */
 .container {
   width: 100%;
   max-width: var(--max-content-width);
@@ -69,26 +48,24 @@ body {
   padding: 0 var(--gutter);
 }
 
-/* -----------------------------------------
-   Header (glass) — sticky + safe-area handling
-   ----------------------------------------- */
+/* Header: clean layout, only logo + brand + hamburger */
 header {
   position: sticky;
-  top: env(safe-area-inset-top, 0);
+  top: 0;
   z-index: 99;
   height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px calc(var(--gutter) - 4px);
-  background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.20)); /* subtle */
-  backdrop-filter: blur(12px) saturate(110%);
-  -webkit-backdrop-filter: blur(12px) saturate(110%);
+  padding: 10px calc(var(--gutter) - 4px);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px) saturate(110%);
+  -webkit-backdrop-filter: blur(10px) saturate(110%);
   border-bottom: 1px solid rgba(255,255,255,0.6);
   gap: 12px;
 }
 
-/* Header left */
+/* Header left: logo + brand */
 .header-left {
   display: flex;
   align-items: center;
@@ -97,7 +74,6 @@ header {
 
 .header-left img {
   height: 44px;
-  width: auto;
   display: block;
 }
 
@@ -108,15 +84,13 @@ header {
   letter-spacing: -0.02em;
 }
 
-/* -----------------------------------------
-   Hamburger (accessible button)
-   ----------------------------------------- */
+/* Hamburger: always visible (user requested header clean) */
 .hamburger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -134,8 +108,9 @@ header {
   background: rgba(0,0,0,0.04);
 }
 
-/* bars */
-.hamburger .bar {
+/* bars inside hamburger */
+.hamburger .bar,
+.hamburger span {
   display: block;
   width: 22px;
   height: 2.6px;
@@ -144,22 +119,23 @@ header {
   transition: transform .25s ease, opacity .18s ease;
 }
 
-/* Optionally add an "is-open" modifier in JS to animate to X */
-.hamburger.is-open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.hamburger.is-open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.is-open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.hamburger.is-open .bar:nth-child(1),
+.hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.is-open .bar:nth-child(2),
+.hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.is-open .bar:nth-child(3),
+.hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* -----------------------------------------
-   Nav menu (mobile popover & desktop inline)
-   ----------------------------------------- */
+/* Nav menu: hidden by default; toggled by JS (.show).
+   Contains navigation links + language switch (so header stays clean). */
 .nav-menu {
-  position: absolute;
-  top: calc(var(--header-height) + 8px);
+  position: fixed;
+  top: 76px;
   right: 14px;
-  min-width: 180px;
+  min-width: 220px;
+  max-width: calc(100% - 28px);
   background: var(--nav-bg);
   color: #fff;
-  backdrop-filter: blur(10px);
   padding: 14px 16px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-1);
@@ -172,57 +148,67 @@ header {
   transition: opacity .18s ease, transform .18s ease;
 }
 
-/* show popover (toggle via JS) */
+/* show popover */
 .nav-menu.show {
   display: flex;
   transform: translateY(0) scale(1);
   opacity: 1;
 }
 
-/* links */
-.nav-menu a {
+/* nav links inside popover */
+.nav-menu a,
+.nav-menu .lang-switch button {
   color: #fff;
   text-decoration: none;
   font-size: 15px;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
   transition: background .12s ease;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
 
+/* hover/focus states */
 .nav-menu a:hover,
-.nav-menu a:focus {
+.nav-menu a:focus,
+.nav-menu .lang-switch button:hover,
+.nav-menu .lang-switch button:focus {
   background: rgba(255,255,255,0.06);
   outline: none;
 }
 
-/* Desktop layout */
-@media (min-width: 780px) {
-  .hamburger { display: none; }
+/* separate language switch group visually */
+.nav-menu .lang-switch {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  align-items: center;
+}
 
-  header { padding: 18px var(--gutter); }
+/* language buttons style */
+.nav-menu .lang-switch button {
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  transition: background .12s ease, transform .08s ease;
+}
 
+.nav-menu .lang-switch button.active {
+  background: rgba(255,255,255,0.18);
+}
+
+/* On very large screens, make the menu a small dropdown rather than full popover */
+@media (min-width: 1200px) {
   .nav-menu {
-    position: static;
-    display: flex !important;
-    flex-direction: row;
-    background: transparent;
-    gap: 22px;
-    padding: 0;
-    box-shadow: none;
-    transform: none;
-    opacity: 1;
-  }
-
-  .nav-menu a {
-    color: var(--primary-strong);
-    font-weight: 600;
-    padding: 0;
+    min-width: 260px;
   }
 }
 
-/* -----------------------------------------
-   Hero section
-   ----------------------------------------- */
+/* Hero & other sections (kept minimal here) */
 .hero {
   max-width: var(--max-content-width);
   margin: 80px auto 40px auto;
@@ -236,19 +222,15 @@ header {
   margin-bottom: 14px;
   color: #012230;
   line-height: 1.04;
-  letter-spacing: -0.02em;
 }
 
 .hero .subtitle {
   font-size: clamp(15px, 2vw, 18px);
   margin-bottom: 30px;
   color: var(--muted);
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Primary button (accessible) */
+/* primary button */
 .btn-primary {
   background: var(--primary);
   color: #fff;
@@ -256,21 +238,10 @@ header {
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  box-shadow: 0 6px 16px rgba(0,75,102,0.12);
-  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
   font-weight: 600;
 }
 
-.btn-primary:hover { transform: translateY(-2px); opacity: .98; }
-.btn-primary:active { transform: translateY(0); box-shadow: 0 4px 10px rgba(0,75,102,0.08); }
-.btn-primary:focus-visible {
-  outline: 3px solid rgba(0,75,102,0.18);
-  outline-offset: 3px;
-}
-
-/* -----------------------------------------
-   Contact section
-   ----------------------------------------- */
+/* contact */
 .contact-section {
   margin-top: 60px;
   padding: 40px;
@@ -280,85 +251,18 @@ header {
   max-width: calc(var(--max-content-width) + var(--gutter) * 2);
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 8px 30px rgba(20,30,40,0.03);
 }
 
-.contact-section .container {
-  padding: 0;
-}
-
-.contact-section h2 {
-  margin-bottom: 10px;
-  font-size: 22px;
-  color: var(--primary);
-}
-
-.contact-section p {
-  margin-bottom: 10px;
-  color: var(--muted);
-}
-
-.contact-section a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.contact-section a:hover {
-  color: var(--primary-strong);
-}
-
-/* Layout for larger screens: two-column contact info */
-@media (min-width: 880px) {
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 24px;
-    align-items: start;
-  }
-}
-
-/* -----------------------------------------
-   Footer
-   ----------------------------------------- */
+/* footer */
 footer {
   margin-top: 40px;
   text-align: center;
-  padding: 28px 20px calc(28px + env(safe-area-inset-bottom, 0));
+  padding: 28px 20px;
   color: #333;
   font-size: 14px;
 }
 
-/* -----------------------------------------
-   Small improvements & accessibility
-   ----------------------------------------- */
-
-/* Ensure focusable interactive elements have visible focus */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-  outline: none;
-}
-
-/* Make images responsive */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-style: none;
-}
-
-/* Form controls (if present later) */
-input, textarea, select {
-  font: inherit;
-  color: inherit;
-  border: 1px solid rgba(0,0,0,0.08);
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: #fff;
-}
-
-/* Small helpers */
+/* accessibility helpers */
 .sr-only {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -367,4 +271,10 @@ input, textarea, select {
   white-space: nowrap; border: 0;
 }
 
-/* End of file */
+/* responsive images */
+img { max-width: 100%; height: auto; display: block; }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
