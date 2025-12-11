@@ -1,86 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - PT Sinar Langit Hanoi</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Layanan — Arianoi</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="left">
-        <img src="IMG_20251202_181832_452.png" class="logo">
-        <h2 class="brand-text">PT Sinar Langit Hanoi</h2>
+<header>
+    <div class="header-left">
+        <img src="../logo.png" alt="Logo PT Sinar Langit Hanoi">
+        <span class="brand">PT Sinar Langit Hanoi</span>
     </div>
 
-    <div class="menu-wrapper">
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
+    <button id="hamburgerBtn" class="hamburger" aria-controls="menu" aria-expanded="false" aria-label="Buka atau tutup navigasi">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+    </button>
 
-        <div class="menu-dropdown" id="menuDropdown">
-            <a href="index.html">Home</a>
-            <a href="service.html">Service</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://client.arianoi.com" target="_blank">Client</a>
+    <nav class="nav-menu" id="menu" aria-label="Navigasi utama" aria-hidden="true">
+        <a href="index.php">Beranda</a>
+        <a href="service.php" aria-current="page">Layanan</a>
+        <a href="contact.php">Kontak</a>
 
-            <div class="sub-menu">
-                <span>Languages ▾</span>
-                <div class="sub-menu-content">
-                    <a href="service-id.html">Indonesia</a>
-                    <a href="service.html">English</a>
-                </div>
-            </div>
+        <div class="lang-switch" role="group" aria-label="Ganti bahasa">
+            <button aria-pressed="false" data-lang="en" title="English" onclick="location.href='../en/service.php'">EN</button>
+            <button class="active" aria-pressed="true" data-lang="id" title="Bahasa Indonesia">ID</button>
         </div>
-    </div>
+    </nav>
 </header>
 
-<!-- TITLE -->
-<section class="hero" style="padding-top:150px; padding-bottom:40px;">
-    <h1>Our Services</h1>
-    <p>Professional solutions to support your business and personal development.</p>
-</section>
+<main>
+    <section class="hero">
+        <h1>Layanan Profesional Kami</h1>
+        <p class="subtitle">Pilih salah satu solusi kami untuk memulai konsultasi Anda.</p>
+    </section>
 
-<!-- SERVICE CARDS -->
-<section class="service-list">
+    <section class="service-list">
+        <div class="service-card">
+            <h3>1. Manajemen Keuangan Pribadi</h3>
+            <p>Membantu individu mengatur, merencanakan, dan mengoptimalkan stabilitas keuangan pribadi.</p>
+            <a class="btn-primary" href="https://form.arianoi.com/1.php" target="_blank" rel="noopener">Mulai Permintaan</a>
+        </div>
 
-    <div class="service-card">
-        <h3>Personal Financial Management</h3>
-        <p>Financial stability for long-term growth.</p>
-        <a class="btn-explore" href="form.html">Choose Service</a>
-    </div>
+        <div class="service-card">
+            <h3>2. Konsultasi Keuangan</h3>
+            <p>Konsultasi profesional untuk pengambilan keputusan keuangan bisnis atau individu.</p>
+            <a class="btn-primary" href="https://form.arianoi.com/2.php" target="_blank" rel="noopener">Mulai Permintaan</a>
+        </div>
 
-    <div class="service-card">
-        <h3>Financial Advisory</h3>
-        <p>Smart advisory for individuals and businesses.</p>
-        <a class="btn-explore" href="form.html">Choose Service</a>
-    </div>
+        <div class="service-card">
+            <h3>3. Bantuan Dokumen Imigrasi</h3>
+            <p>Persiapan dokumen & bantuan untuk perjalanan, imigrasi, dan relokasi.</p>
+            <a class="btn-primary" href="https://form.arianoi.com/3.php" target="_blank" rel="noopener">Mulai Permintaan</a>
+        </div>
 
-    <div class="service-card">
-        <h3>Immigration Document Assistance</h3>
-        <p>Move across borders without stress.</p>
-        <a class="btn-explore" href="form.html">Choose Service</a>
-    </div>
-
-    <div class="service-card">
-        <h3>Business SOP Consulting</h3>
-        <p>Optimize your operational excellence.</p>
-        <a class="btn-explore" href="form.html">Choose Service</a>
-    </div>
-
-</section>
+        <div class="service-card">
+            <h3>4. Konsultasi SOP Bisnis</h3>
+            <p>Panduan menyeluruh untuk membangun dan meningkatkan Standard Operating Procedure bisnis.</p>
+            <a class="btn-primary" href="https://form.arianoi.com/4.php" target="_blank" rel="noopener">Mulai Permintaan</a>
+        </div>
+    </section>
+</main>
 
 <footer>
-    <p>2025 © PT Sinar Langit Hanoi. All Rights Reserved.</p>
+    2025 PT Sinar Langit Hanoi. Hak Cipta Dilindungi.
 </footer>
 
 <script>
-function toggleMenu() {
-    document.getElementById("menuDropdown").classList.toggle("show-menu");
-}
+(function () {
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('menu');
+
+  function setExpanded(expanded) {
+    btn.setAttribute('aria-expanded', String(expanded));
+    menu.classList.toggle('show', expanded);
+    menu.setAttribute('aria-hidden', String(!expanded));
+    btn.classList.toggle('is-open', expanded);
+  }
+
+  btn.addEventListener('click', function (e) {
+    setExpanded(!menu.classList.contains('show'));
+  });
+
+  // close on ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  // close when a nav link is clicked
+  Array.from(menu.querySelectorAll('a')).forEach(function (link) {
+    link.addEventListener('click', function () { setExpanded(false); });
+  });
+
+  // Language button client-side active state (visual only)
+  const langButtons = menu.querySelectorAll('.lang-switch button');
+  langButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      langButtons.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed','false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-pressed','true');
+    });
+  });
+})();
 </script>
 
 </body>
