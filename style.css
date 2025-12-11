@@ -304,3 +304,45 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 14px;
     color: #444;
 }
+
+.small-hero {
+    padding-top: 140px;
+    padding-bottom: 40px;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 25px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.contact-box {
+    background: rgba(255,255,255,0.12);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.contact-box h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.contact-box p {
+    font-size: 15px;
+}
+
+/* Hidden clean links */
+.contact-box a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
