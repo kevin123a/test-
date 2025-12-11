@@ -14,18 +14,23 @@
     <span class="brand">PT Sinar Langit Hanoi</span>
   </div>
 
-  <!-- Accessible button for the hamburger -->
+  <!-- Hamburger visible on all screen sizes to keep header clean -->
   <button id="hamburgerBtn" class="hamburger" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="bar" aria-hidden="true"></span>
     <span class="bar" aria-hidden="true"></span>
     <span class="bar" aria-hidden="true"></span>
   </button>
 
-  <nav class="nav-menu" id="menu" aria-label="Main navigation">
+  <!-- Menu is hidden by default; includes nav links and language buttons -->
+  <nav class="nav-menu" id="menu" aria-label="Main navigation" aria-hidden="true">
     <a href="index.html">Home</a>
     <a href="service.html">Service</a>
     <a href="contact.html">Contact</a>
-    <a href="../id/index.html" lang="id">ID</a>
+
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button class="active" aria-pressed="true" data-lang="en" title="English">EN</button>
+      <button aria-pressed="false" data-lang="id" title="Indonesian" onclick="location.href='../id/index.html'">ID</button>
+    </div>
   </nav>
 </header>
 
@@ -52,23 +57,22 @@
 </footer>
 
 <script>
-/* Accessible menu toggle with keyboard + outside click handling */
+/* Menu toggle — keeps header clean. Language buttons live inside menu.
+   This script updates aria attributes and closes menu on outside click or ESC. */
 (function () {
   const btn = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('menu');
+  const langButtons = menu.querySelectorAll('.lang-switch button');
 
   function setExpanded(expanded) {
     btn.setAttribute('aria-expanded', String(expanded));
-    btn.classList.toggle('is-open', expanded);
     menu.classList.toggle('show', expanded);
+    menu.setAttribute('aria-hidden', String(!expanded));
+    btn.classList.toggle('is-open', expanded);
   }
 
-  function toggleMenu() {
-    setExpanded(menu.classList.toggle('show'));
-  }
-
-  btn.addEventListener('click', function (e) {
-    const opening = menu.classList.toggle('show');
+  btn.addEventListener('click', function () {
+    const opening = !menu.classList.contains('show');
     setExpanded(opening);
   });
 
@@ -79,16 +83,27 @@
     }
   });
 
-  // close when clicking outside the menu on mobile/overlay
+  // close when clicking outside
   document.addEventListener('click', function (e) {
     if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('show')) {
       setExpanded(false);
     }
   });
 
-  // Close menu when a nav link is clicked (useful for single-page or mobile)
+  // close when a nav link is clicked
   Array.from(menu.querySelectorAll('a')).forEach(function (link) {
     link.addEventListener('click', function () { setExpanded(false); });
+  });
+
+  // language button behavior: visually mark active (client-side).
+  langButtons.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      // If the button has a navigation (like the ID button above), the page will navigate.
+      // Otherwise, just mark active state.
+      langButtons.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-pressed', 'true');
+    });
   });
 })();
 </script>
