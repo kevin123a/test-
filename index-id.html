@@ -14,17 +14,21 @@
     <span class="brand">PT Sinar Langit Hanoi</span>
   </div>
 
-  <button id="hamburgerBtn" class="hamburger" aria-controls="menu" aria-expanded="false" aria-label="Buka/tutup navigasi">
+  <button id="hamburgerBtn" class="hamburger" aria-controls="menu" aria-expanded="false" aria-label="Buka atau tutup navigasi">
     <span class="bar" aria-hidden="true"></span>
     <span class="bar" aria-hidden="true"></span>
     <span class="bar" aria-hidden="true"></span>
   </button>
 
-  <nav class="nav-menu" id="menu" aria-label="Navigasi utama">
+  <nav class="nav-menu" id="menu" aria-label="Navigasi utama" aria-hidden="true">
     <a href="index.html">Beranda</a>
     <a href="service.html">Layanan</a>
     <a href="contact.html">Kontak</a>
-    <a href="../en/index.html" lang="en">EN</a>
+
+    <div class="lang-switch" role="group" aria-label="Ganti bahasa">
+      <button aria-pressed="false" data-lang="en" title="English" onclick="location.href='../en/index.html'">EN</button>
+      <button class="active" aria-pressed="true" data-lang="id" title="Bahasa Indonesia">ID</button>
+    </div>
   </nav>
 </header>
 
@@ -51,19 +55,21 @@
 </footer>
 
 <script>
-/* Same accessible behavior as EN page */
+/* Same behavior as EN page: menu toggle + language buttons inside the menu */
 (function () {
   const btn = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('menu');
+  const langButtons = menu.querySelectorAll('.lang-switch button');
 
   function setExpanded(expanded) {
     btn.setAttribute('aria-expanded', String(expanded));
-    btn.classList.toggle('is-open', expanded);
     menu.classList.toggle('show', expanded);
+    menu.setAttribute('aria-hidden', String(!expanded));
+    btn.classList.toggle('is-open', expanded);
   }
 
-  btn.addEventListener('click', function (e) {
-    const opening = menu.classList.toggle('show');
+  btn.addEventListener('click', function () {
+    const opening = !menu.classList.contains('show');
     setExpanded(opening);
   });
 
@@ -81,6 +87,14 @@
 
   Array.from(menu.querySelectorAll('a')).forEach(function (link) {
     link.addEventListener('click', function () { setExpanded(false); });
+  });
+
+  langButtons.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      langButtons.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-pressed', 'true');
+    });
   });
 })();
 </script>
