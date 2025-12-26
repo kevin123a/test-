@@ -1,199 +1,252 @@
-diff --git a/index.html b/index.html
-index 748bd8abc55fcd87104e1bdd859fd1a973bc34f0..409353eb3314391bab3361fdd4676947010ac4f0 100644
---- a/index.html
-+++ b/index.html
-@@ -1,82 +1,142 @@
- <!doctype html>
- <html lang="en">
- <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width,initial-scale=1">
-   <title>De Yuwa Group — PT Sinar Langit Hanoi</title>
-   <meta name="description" content="De Yuwa Group is part of PT Sinar Langit Hanoi, a professional business management and consulting firm.">
-+  <link rel="preconnect" href="https://fonts.googleapis.com">
-+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
- </head>
--
- <body>
--  <!-- HEADER -->
--  <header>
-+  <header class="topbar">
-     <div class="container navbar">
--      <div class="logo">De Yuwa Group</div>
-+      <a class="brand" href="#home">
-+        <img src="logo.png" alt="De Yuwa Group" class="brand-mark" />
-+        <div class="brand-text">
-+          <span class="brand-title">De Yuwa Group</span>
-+          <span class="brand-subtitle">PT Sinar Langit Hanoi</span>
-+        </div>
-+      </a>
-       <nav>
-         <a href="#about">About</a>
-         <a href="#services">Services</a>
--        <a href="#contact">Contact</a>
-+        <a href="#contact" class="accent">Contact</a>
-       </nav>
-     </div>
-   </header>
- 
--  <!-- HERO SECTION -->
--  <section class="hero">
--    <h1>Transforming Strategy, Driving Excellence</h1>
--    <p>
--      De Yuwa Group, a division of PT Sinar Langit Hanoi, provides strategic business consulting and operational excellence services to help organizations achieve sustainable growth.
--    </p>
--    <a href="#contact" class="btn">Get in Touch</a>
--  </section>
--
--  <!-- ABOUT -->
--  <section id="about" class="section">
--    <h2>About Us</h2>
--    <p>
--      We are part of <strong>PT Sinar Langit Hanoi</strong>, a management and consulting company focused on business transformation, efficiency improvement, and competitive advantage development.
--      Our goal is to help clients adapt, grow, and lead in an ever-changing global market.
--    </p>
--  </section>
--
--  <!-- SERVICES -->
--  <section id="services" class="section">
--    <h2>Our Services</h2>
--    <div class="services container">
--      <div class="card">
--        <h3>Business Strategy</h3>
--        <p>Developing clear and actionable strategies that align with long-term corporate goals.</p>
-+  <main>
-+    <section id="home" class="hero">
-+      <div class="container hero-grid">
-+        <div class="hero-content">
-+          <span class="hero-badge">Strategic Business Advisory</span>
-+          <h1>Transforming Strategy, Driving Excellence</h1>
-+          <p>
-+            De Yuwa Group, a division of PT Sinar Langit Hanoi, provides strategic business consulting and operational
-+            excellence services to help organizations achieve sustainable growth.
-+          </p>
-+          <div class="hero-actions">
-+            <a href="#contact" class="btn primary">Schedule Consultation</a>
-+            <div class="hero-contact">
-+              <span>Email Executive Desk</span>
-+              <a href="mailto:cs@sinarlangithanoi.my.id">cs@sinarlangithanoi.my.id</a>
-+            </div>
-+          </div>
-+        </div>
-+        <aside class="hero-art" aria-label="Asian heritage motifs">
-+          <div class="motif-card">
-+            <span class="motif-label">Asian Heritage, Modern Luxury</span>
-+            <h3>Nuansa Adat & Alam</h3>
-+            <p>Motif flora fauna khas Asia sebagai simbol ketekunan, kemakmuran, dan perlindungan.</p>
-+            <ul class="motif-list">
-+              <li><span>🌸</span> Lotus & Melati — ketenangan dan kejernihan.</li>
-+              <li><span>🦚</span> Merak — keanggunan dan prestise.</li>
-+              <li><span>🐉</span> Naga — kekuatan dan keberuntungan.</li>
-+            </ul>
-+          </div>
-+          <div class="motif-panel">
-+            <div>
-+              <span class="panel-title">Heritage Seal</span>
-+              <strong>Flora & Fauna Harmony</strong>
-+            </div>
-+            <span class="panel-mark">DY</span>
-+          </div>
-+        </aside>
-       </div>
--      <div class="card">
--        <h3>Operational Management</h3>
--        <p>Improving process efficiency, workflow, and team performance for better productivity.</p>
-+    </section>
-+
-+    <section id="about" class="section about">
-+      <div class="container section-inner">
-+        <h2>About Us</h2>
-+        <p>
-+          We are part of <strong>PT Sinar Langit Hanoi</strong>, a management and consulting company focused on business
-+          transformation, efficiency improvement, and competitive advantage achievement. Our goal is to help clients adapt,
-+          grow, and lead in an ever-changing global market.
-+        </p>
-       </div>
--      <div class="card">
--        <h3>Financial Advisory</h3>
--        <p>Providing insight-driven financial planning, investment evaluation, and risk management.</p>
-+    </section>
-+
-+    <section id="services" class="section services">
-+      <div class="container section-inner">
-+        <h2>Our Services</h2>
-+        <div class="service-grid">
-+          <article class="service-card">
-+            <h3>Business Strategy</h3>
-+            <p>Developing clear and actionable strategies that align with long-term corporate goals.</p>
-+          </article>
-+          <article class="service-card">
-+            <h3>Operational Excellence</h3>
-+            <p>Partnering with organizations to craft bespoke strategies, streamline operations, and maintain compliance.</p>
-+          </article>
-+          <article class="service-card">
-+            <h3>Change & Transformation</h3>
-+            <p>Guiding transformational initiatives to strengthen resilience and competitive positioning.</p>
-+          </article>
-+        </div>
-       </div>
--      <div class="card">
--        <h3>Implementation & Monitoring</h3>
--        <p>Guiding companies through the execution and supervision of their strategic initiatives.</p>
-+    </section>
-+
-+    <section class="section focus">
-+      <div class="container section-inner">
-+        <h2>Elevating Strategy for Visionary Leaders</h2>
-+        <p>
-+          Our advisory practice blends strategic insight with disciplined execution. We collaborate closely with leadership
-+          teams to unlock performance improvements, navigate market complexity, and create lasting value across the
-+          organization.
-+        </p>
-+        <ul class="focus-list">
-+          <li>Executive-aligned roadmaps that translate vision into measurable impact.</li>
-+          <li>Operational frameworks that reinforce governance, risk management, and agility.</li>
-+          <li>Financial perspectives that inform sound investment and growth decisions.</li>
-+        </ul>
-       </div>
--    </div>
--  </section>
-+    </section>
- 
--  <!-- CONTACT -->
--  <section id="contact" class="contact">
--    <h2>Contact Us</h2>
--    <p>For inquiries or collaboration, reach us at:</p>
--    <p><a href="mailto:cs@sinarlangithanoi.my.id">cs@sinarlangithanoi.my.id</a></p>
--    <p>Visit our website: <a href="https://sinarlangithanoi.my.id" target="_blank">sinarlangithanoi.my.id</a></p>
--  </section>
-+    <section id="contact" class="section contact">
-+      <div class="container contact-card">
-+        <div class="contact-copy">
-+          <h2>Connect With Us</h2>
-+          <p>For confidential consultations or partnership opportunities, reach our executive desk below.</p>
-+        </div>
-+        <div class="contact-details">
-+          <a href="mailto:cs@sinarlangithanoi.my.id" class="contact-link">cs@sinarlangithanoi.my.id</a>
-+          <a href="https://sinarlangithanoi.my.id" target="_blank" rel="noreferrer" class="contact-link">sinarlangithanoi.my.id</a>
-+        </div>
-+      </div>
-+    </section>
-+  </main>
- 
--  <!-- FOOTER -->
-   <footer>
--    <p>© <span id="year"></span> De Yuwa Group — PT Sinar Langit Hanoi. All rights reserved.</p>
-+    <div class="container footer-content">
-+      <p>© <span id="year"></span> De Yuwa Group — PT Sinar Langit Hanoi. All rights reserved.</p>
-+    </div>
-   </footer>
- 
-   <script>
-     document.getElementById("year").textContent = new Date().getFullYear();
-   </script>
- </body>
--</html>
-\ No newline at end of file
-+</html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arianoi — PT Sinar Langit Hanoi (ID)</title>
+  <link rel="stylesheet" href="../style.css">
+  <title>PT Sinar Langit Hanoi</title>
+  <meta name="description" content="PT Sinar Langit Hanoi — mendampingi pertumbuhan bisnis di Asia Tenggara melalui konsultasi manajemen (KBLI 70209)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="../logo.png" alt="Logo PT Sinar Langit Hanoi">
+    <span class="brand">PT Sinar Langit Hanoi</span>
+  </div>
+
+  <button id="hamburgerBtn" class="hamburger" aria-controls="menu" aria-expanded="false" aria-label="Buka atau tutup navigasi">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+  </button>
+
+  <nav class="nav-menu" id="menu" aria-label="Navigasi utama" aria-hidden="true">
+    <a href="index.html">Beranda</a>
+    <a href="service.html">Layanan</a>
+    <a href="contact.html">Kontak</a>
+
+    <div class="lang-switch" role="group" aria-label="Ganti bahasa">
+      <button aria-pressed="false" data-lang="en" title="English" onclick="location.href='../en/index.html'">EN</button>
+      <button class="active" aria-pressed="true" data-lang="id" title="Bahasa Indonesia">ID</button>
+  <header class="topbar">
+    <div class="container navbar">
+      <a class="brand" href="#home">
+        <img src="logo.png" alt="Logo PT Sinar Langit Hanoi" class="brand-mark" />
+        <div class="brand-text">
+          <span class="brand-title">PT Sinar Langit Hanoi</span>
+          <span class="brand-subtitle">Mitra Strategis & Pertumbuhan</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#services">Layanan</a>
+        <a href="#heritage">Warisan</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Ganti bahasa">
+        <a href="index.html">EN</a>
+        <a class="active" href="index-id.html" aria-current="page">ID</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Mendukung pertumbuhan bisnis Anda secara cerdas di Asia Tenggara</h1>
+    <p class="subtitle">Kami membantu bisnis berkembang lebih kuat melalui strategi yang jelas dan kemitraan terpercaya.</p>
+
+    <a class="btn-primary" href="https://form.arianoi.com/1.php" target="_blank" rel="noopener">Mulai Layanan</a>
+  </section>
+
+  <section class="contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Informasi Kontak</h2>
+
+    <p>Email: <a href="mailto:support@arianoi.com">support@arianoi.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6289518327435" target="_blank" rel="noopener">wa.me/6289518327435</a></p>
+    <p>Instagram: <a href="https://instagram.com/arianoi_asia" target="_blank" rel="noopener">@arianoi_asia</a></p>
+    <p>Alamat: Jl. Nakula, PT Sinar Langit Hanoi, Tanjunganom, Nganjuk, Jawa Timur, Indonesia 64483</p>
+  </section>
+</main>
+
+<footer>
+  2025 PT Sinar Langit Hanoi. Hak Cipta Dilindungi.
+</footer>
+
+<script>
+/* Same behavior as EN page: menu toggle + language buttons inside the menu */
+(function () {
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('menu');
+  const langButtons = menu.querySelectorAll('.lang-switch button');
+
+  function setExpanded(expanded) {
+    btn.setAttribute('aria-expanded', String(expanded));
+    menu.classList.toggle('show', expanded);
+    menu.setAttribute('aria-hidden', String(!expanded));
+    btn.classList.toggle('is-open', expanded);
+  }
+
+  btn.addEventListener('click', function () {
+    const opening = !menu.classList.contains('show');
+    setExpanded(opening);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  Array.from(menu.querySelectorAll('a')).forEach(function (link) {
+    link.addEventListener('click', function () { setExpanded(false); });
+  });
+
+  langButtons.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      langButtons.forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-pressed', 'true');
+    });
+  });
+})();
+</script>
+
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Mendukung pertumbuhan bisnis Anda secara cerdas di Asia Tenggara</h1>
+          <p>Kami membantu bisnis berkembang lebih kuat melalui strategi yang jelas dan kemitraan terpercaya.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="#contact">Mulai Konsultasi</a>
+            <div class="hero-meta">
+              <span>Konsultasi Manajemen (KBLI 70209)</span>
+              <strong>PT Sinar Langit Hanoi</strong>
+            </div>
+          </div>
+        </div>
+        <aside class="motif-card" aria-label="Visual adat Asia">
+          <h3>Adat Asia, Flora & Fauna</h3>
+          <p>
+            Terinspirasi dari tradisi Asia Tenggara, kami memadukan motif budaya dan elemen alam sebagai simbol ketahanan,
+            kemakmuran, serta kolaborasi yang terpercaya.
+          </p>
+          <ul class="motif-list">
+            <li><span>🌺</span> Teratai & melati untuk kejernihan, ketenangan, dan fokus.</li>
+            <li><span>🦚</span> Merak melambangkan prestise dan kepercayaan diri.</li>
+            <li><span>🐉</span> Naga sebagai simbol kekuatan dan perlindungan.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Tentang PT Sinar Langit Hanoi</h2>
+        <p>
+          Kami adalah firma penasihat strategis dengan fokus konsultasi manajemen (KBLI 70209). Tim kami membantu pemimpin
+          bisnis menavigasi pasar, merancang strategi yang siap tumbuh, serta membangun kemitraan jangka panjang di Asia
+          Tenggara.
+        </p>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Peta Jalan Strategis</h3>
+            <p>Rencana yang jelas dan terukur untuk menerjemahkan visi ke dalam eksekusi.</p>
+          </article>
+          <article class="about-card">
+            <h3>Kemitraan Terpercaya</h3>
+            <p>Kami bekerja berdampingan dengan tim pimpinan demi dampak yang berkelanjutan.</p>
+          </article>
+          <article class="about-card">
+            <h3>Keahlian Regional</h3>
+            <p>Pemahaman mendalam tentang budaya bisnis dan dinamika pasar Asia Tenggara.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Layanan Utama</h2>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Strategi Bisnis</h3>
+            <p>Mengarahkan keputusan pertumbuhan dengan wawasan data dan posisi kompetitif.</p>
+          </article>
+          <article class="service-card">
+            <h3>Keunggulan Operasional</h3>
+            <p>Mengoptimalkan proses, tata kelola, dan kinerja tim untuk eksekusi yang lebih kuat.</p>
+          </article>
+          <article class="service-card">
+            <h3>Pendampingan Transformasi</h3>
+            <p>Mendukung perubahan organisasi, inovasi, dan kesiapan bisnis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="heritage" class="section heritage">
+      <div class="container">
+        <h2>Warisan Visual dalam Cerita Kami</h2>
+        <p>
+          Identitas kami merayakan warisan budaya Asia Tenggara melalui simbol yang bermakna. Perpaduan flora dan fauna
+          mencerminkan harmoni, keberanian, dan bimbingan yang terpercaya.
+        </p>
+        <div class="heritage-grid">
+          <div class="heritage-item">
+            <h3>Inspirasi Adat</h3>
+            <p>Motif tradisional mengingatkan kami untuk menghormati akar budaya sambil memimpin modernisasi.</p>
+          </div>
+          <div class="heritage-item">
+            <h3>Harmoni Flora</h3>
+            <p>Teratai, melati, dan bunga tropis melambangkan ketenangan strategi dan pertumbuhan stabil.</p>
+          </div>
+          <div class="heritage-item">
+            <h3>Kekuatan Fauna</h3>
+            <p>Simbol pelindung seperti merak dan naga menegaskan prestise serta ketahanan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-card">
+        <div>
+          <h2>Informasi Kontak</h2>
+          <p>Diskusikan bagaimana kami dapat mendukung fase pertumbuhan Anda berikutnya.</p>
+          <p>Email: <a href="mailto:support@arianoi.com">support@arianoi.com</a></p>
+          <p>WhatsApp: <a href="https://wa.me/6289518327435" target="_blank" rel="noopener">wa.me/6289518327435</a></p>
+          <p>Instagram: <a href="https://instagram.com/arianoi_asia" target="_blank" rel="noopener">@arianoi_asia</a></p>
+        </div>
+        <div class="contact-links">
+          <span>Kantor Pusat</span>
+          <span>Jl. Nakula, PT Sinar Langit Hanoi, Tanjunganom, Nganjuk, Jawa Timur, Indonesia 64483</span>
+          <a href="https://sinarlangithanoi.my.id" target="_blank" rel="noopener">sinarlangithanoi.my.id</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      2025 PT Sinar Langit Hanoi. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
