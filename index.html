@@ -2,81 +2,124 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>De Yuwa Group — PT Sinar Langit Hanoi</title>
-  <meta name="description" content="De Yuwa Group is part of PT Sinar Langit Hanoi, a professional business management and consulting firm.">
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arianoi – PT Sinar Langit Hanoi</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../logo.png">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="logo-group">
-      <img src="logo.png" alt="De Yuwa Group" class="logo-img" />
-      <div class="logo-text">
-        <div class="logo-title">De Yuwa Group</div>
-        <div class="logo-subtitle">PT Sinar Langit Hanoi</div>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-    </nav>
-  </header>
 
-  <!-- HERO -->
+<header>
+  <div class="header-left">
+    <img src="../logo.png" alt="Logo PT Sinar Langit Hanoi">
+    <span class="brand">PT Sinar Langit Hanoi</span>
+  </div>
+
+  <button id="hamburgerBtn"
+          class="hamburger"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Buka atau tutup navigasi">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+  </button>
+
+  <nav class="nav-menu" id="menu" aria-label="Navigasi utama" aria-hidden="true">
+    <a href="index.php" aria-current="page">Beranda</a>
+    <a href="service.php">Layanan</a>
+    <a href="contact.php">Kontak</a>
+    <a href="https://client.arianoi.com">Login Klien</a>
+
+    <div class="lang-switch" role="group" aria-label="Ganti bahasa">
+      <button aria-pressed="false"
+              data-lang="en"
+              onclick="location.href='../en/index.php'">EN</button>
+      <button class="active"
+              aria-pressed="true"
+              data-lang="id">ID</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
   <section class="hero">
-    <div class="hero-inner">
-      <h1 class="hero-title">Strategic Solutions for Visionary Leaders</h1>
-      <p class="hero-desc">
-        De Yuwa Group, bagian dari PT Sinar Langit Hanoi, menghadirkan layanan konsultasi bisnis, transformasi, dan pertumbuhan berkelanjutan untuk Anda yang ingin menjadi terdepan.
-      </p>
-      <div class="hero-actions">
-        <a href="https://sinarlangithanoi.my.id/service.html" class="btn-main">Explore Services</a>
-        <a href="https://sinarlangithanoi.my.id/contact.html" class="btn-outline">Contact Us</a>
-      </div>
-    </div>
-  </section>
+    <h1>
+      Mendukung Pertumbuhan Bisnis Anda<br>
+      secara Strategis di Asia Tenggara
+    </h1>
 
-  <!-- ABOUT -->
-  <section id="about" class="section about">
-    <h2>About</h2>
-    <p class="about-desc">
-      De Yuwa Group adalah konsultan strategis dan manajemen bisnis yang berfokus pada efisiensi, pertumbuhan, dan keunggulan kompetitif. Kami percaya, hasil luar biasa lahir dari pendekatan yang eksklusif, personal, dan profesional — hanya untuk Anda yang mengutamakan kualitas.
+    <p class="subtitle">
+      Konsultasi manajemen, keuangan, dan operasional
+      untuk individu maupun perusahaan yang ingin berkembang secara terukur.
     </p>
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-value">6+</div>
-        <div class="stat-label">Tahun Pengalaman</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">20%</div>
-        <div class="stat-label">Efisiensi Rata-rata</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">3</div>
-        <div class="stat-label">Regional Hubs</div>
-      </div>
-    </div>
+
+    <a href="service.php" class="btn-primary">
+      Jelajahi Layanan
+    </a>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section services">
-    <h2>Signature Services</h2>
-    <p class="services-desc">
-      Solusi khusus untuk para pemimpin dan organisasi yang mengutamakan presisi, kecepatan, dan hasil nyata.
+  <section class="contact-section" aria-labelledby="about-heading">
+    <h2 id="about-heading">Tentang Kami</h2>
+
+    <p>
+      <strong>PT Sinar Langit Hanoi</strong> melalui brand <strong>Arianoi</strong>
+      bergerak di bidang konsultasi manajemen (KBLI 70209),
+      membantu klien mengambil keputusan strategis secara rasional,
+      sistematis, dan berorientasi jangka panjang.
+    </p>
+
+    <p>
+      Kami mengedepankan pemahaman konteks Asia Tenggara,
+      pendekatan profesional, serta kerahasiaan klien sebagai prioritas utama.
     </p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>© <span id="year"></span> DY-PT Sinar Langit Hanoi. All Rights Reserved.</span>
-  </footer>
+</main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer>
+  © 2025 PT Sinar Langit Hanoi. Hak Cipta Dilindungi.
+</footer>
+
+<script>
+(function () {
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('menu');
+
+  function setExpanded(state){
+    btn.setAttribute('aria-expanded', state);
+    menu.classList.toggle('show', state);
+    menu.setAttribute('aria-hidden', !state);
+    btn.classList.toggle('is-open', state);
+  }
+
+  btn.addEventListener('click', function () {
+    setExpanded(!menu.classList.contains('show'));
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) &&
+        !btn.contains(e.target) &&
+        menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
+
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      setExpanded(false);
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
