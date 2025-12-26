@@ -1,4 +1,4 @@
-a/* =========================================================
+/* =========================================================
    ARIANOI – FINAL POLISHED CORPORATE STYLE
    Clean • Elegant • Asian Identity • Executive Feel
    ========================================================= */
@@ -49,7 +49,7 @@ img {
   display: block;
 }
 
-/* ---------- Header (Enhanced, Subtle) ---------- */
+/* ---------- Header ---------- */
 header {
   position: sticky;
   top: 0;
@@ -59,20 +59,15 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 8px var(--gutter);
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--border-soft);
+}
 
-  /* tetap terang & bersih */
-  background:
-    linear-gradient(
-      rgba(255,255,255,0.97),
-      rgba(255,255,255,0.97)
-    ),
-    url("bg-pattern.png");   /* aksen adat HALUS */
-
-  background-size: 420px;   /* kecil agar tidak ramai */
-  background-repeat: repeat;
-
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+/* Header Left */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* LOGO – DIPERKECIL & PROPORSIONAL */
@@ -329,104 +324,4 @@ footer {
 /* ---------- Reduced Motion ---------- */
 @media (prefers-reduced-motion: reduce){
   * { animation: none !important; transition: none !important; }
-}
-/* ===============================
-   FINAL HEADER – POLISHED & SAFE
-   =============================== */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px var(--gutter);
-
-  /* clean + depth (AMAN LOGO) */
-  background: rgba(255,255,255,0.97);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* BRAND BLOCK */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* LOGO – AMAN, TIDAK DIPAKSA */
-.header-left img {
-  height: 34px;          /* ukuran PASS */
-  width: auto;
-  object-fit: contain;
-}
-
-/* BRAND TEXT */
-.header-left .brand {
-  font-weight: 800;
-  font-size: 16.5px;
-  letter-spacing: -0.02em;
-  color: var(--primary-dark);
-  white-space: nowrap;
-}
-
-/* ===============================
-   HAMBURGER – EXECUTIVE FEEL
-   =============================== */
-
-.hamburger {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hamburger:hover {
-  background: rgba(11,60,77,0.06);
-}
-
-.hamburger .bar {
-  width: 21px;
-  height: 2.4px;
-  background: var(--primary-dark);
-  border-radius: 2px;
-  transition: transform .25s ease, opacity .2s ease;
-}
-
-.hamburger.is-open .bar:nth-child(1){
-  transform: translateY(6px) rotate(45deg);
-}
-.hamburger.is-open .bar:nth-child(2){
-  opacity: 0;
-}
-.hamburger.is-open .bar:nth-child(3){
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-.header-left .brand {
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: -0.02em;
-  color: var(--primary-dark);
-  position: relative;
-}
-
-/* garis aksen kecil, TIDAK sentuh logo */
-.header-left .brand::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 26px;
-  height: 2px;
-  background: var(--accent);
-  opacity: 0.6;
 }
