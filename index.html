@@ -1,327 +1,127 @@
-/* =========================================================
-   ARIANOI – FINAL POLISHED CORPORATE STYLE
-   Clean • Elegant • Asian Identity • Executive Feel
-   ========================================================= */
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arianoi – PT Sinar Langit Hanoi</title>
 
-/* ---------- Root Variables ---------- */
-:root{
-  --bg-main: #f4f6f8;
-  --surface: #ffffff;
-  --primary: #0b3c4d;
-  --primary-dark: #072a36;
-  --accent: #8b6f3d; /* batik gold */
-  --text-main: #1a1a1a;
-  --text-muted: #6b7280;
-  --border-soft: rgba(0,0,0,0.08);
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../logo.png">
+</head>
+<body>
 
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-soft: 0 8px 22px rgba(0,0,0,0.08);
-  --shadow-card: 0 6px 18px rgba(0,0,0,0.12);
+<header>
+  <div class="header-left">
+    <img src="../logo.png" alt="Logo PT Sinar Langit Hanoi">
+    <span class="brand">PT Sinar Langit Hanoi</span>
+  </div>
 
-  --header-height: 68px;
-  --gutter: 22px;
-  --max-width: 920px;
+  <button id="hamburgerBtn"
+          class="hamburger"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Buka atau tutup navigasi">
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+    <span class="bar" aria-hidden="true"></span>
+  </button>
 
-  --font-main: "Inter", Arial, sans-serif;
-}
+  <nav class="nav-menu" id="menu" aria-label="Navigasi utama" aria-hidden="true">
+    <a href="index.php" aria-current="page">Beranda</a>
+    <a href="service.php">Layanan</a>
+    <a href="contact.php">Kontak</a>
+    <a href="https://client.arianoi.com">Login Klien</a>
 
-/* ---------- Reset ---------- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
+    <div class="lang-switch" role="group" aria-label="Ganti bahasa">
+      <button aria-pressed="false"
+              data-lang="en"
+              onclick="location.href='../en/index.php'">EN</button>
+      <button class="active"
+              aria-pressed="true"
+              data-lang="id">ID</button>
+    </div>
+  </nav>
+</header>
 
-html, body { height: 100%; }
+<main>
 
-body {
-  margin: 0;
-  font-family: var(--font-main);
-  color: var(--text-main);
-  background: var(--bg-main);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
+  <!-- HERO -->
+  <section class="hero">
+    <h1>
+      Mendukung Pertumbuhan Bisnis<br>
+      Secara Strategis di Asia
+    </h1>
 
-/* ---------- Images ---------- */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+    <p class="subtitle">
+      Konsultasi manajemen dan pengembangan organisasi
+      dengan pendekatan profesional, terukur, dan berkelanjutan.
+    </p>
 
-/* ---------- Header ---------- */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px var(--gutter);
-  background: rgba(255,255,255,0.96);
-  border-bottom: 1px solid var(--border-soft);
-}
+    <a href="service.php" class="btn-primary">
+      Lihat Layanan
+    </a>
+  </section>
 
-/* Header Left */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  <!-- ABOUT -->
+  <section class="contact-section" aria-labelledby="about-heading">
+    <h2 id="about-heading">Tentang Arianoi</h2>
 
-/* LOGO – DIPERKECIL & PROPORSIONAL */
-.header-left img {
-  height: 36px;              /* sebelumnya 44px */
-  width: auto;
-}
+    <p>
+      <strong>PT Sinar Langit Hanoi</strong> melalui unit usaha
+      <strong>Arianoi</strong> bergerak di bidang
+      <strong>konsultasi manajemen (KBLI 70209)</strong>.
+    </p>
 
-/* Brand text */
-.header-left .brand {
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: -0.02em;
-  color: var(--primary-dark);
-}
+    <p>
+      Kami membantu individu dan perusahaan dalam pengambilan
+      keputusan strategis, penyusunan sistem kerja, serta
+      penguatan fondasi bisnis di kawasan Asia Tenggara.
+    </p>
+  </section>
 
-/* ---------- Hamburger ---------- */
-.hamburger {
-  width: 42px;
-  height: 42px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-sm);
-}
+</main>
 
-.hamburger:hover {
-  background: rgba(0,0,0,0.04);
-}
+<footer>
+  © 2025 PT Sinar Langit Hanoi. Hak Cipta Dilindungi.
+</footer>
 
-.hamburger .bar {
-  width: 22px;
-  height: 2.4px;
-  background: var(--primary-dark);
-  border-radius: 2px;
-  display: block;
-  transition: transform .25s ease, opacity .2s ease;
-}
+<script>
+(function () {
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('menu');
 
-.hamburger.is-open .bar:nth-child(1){
-  transform: translateY(6px) rotate(45deg);
-}
-.hamburger.is-open .bar:nth-child(2){
-  opacity: 0;
-}
-.hamburger.is-open .bar:nth-child(3){
-  transform: translateY(-6px) rotate(-45deg);
-}
+  function setExpanded(state){
+    btn.setAttribute('aria-expanded', state);
+    menu.classList.toggle('show', state);
+    menu.setAttribute('aria-hidden', !state);
+    btn.classList.toggle('is-open', state);
+  }
 
-/* ---------- Navigation Menu ---------- */
-.nav-menu {
-  position: fixed;
-  top: 74px;
-  right: 16px;
-  min-width: 230px;
-  background: var(--primary);
-  color: #fff;
-  padding: 14px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-}
+  btn.addEventListener('click', function () {
+    setExpanded(!menu.classList.contains('show'));
+  });
 
-.nav-menu.show { display: flex; }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
 
-.nav-menu a,
-.nav-menu button {
-  color: #fff;
-  text-decoration: none;
-  padding: 9px 10px;
-  border-radius: var(--radius-sm);
-  font-size: 15px;
-  background: transparent;
-  border: none;
-  text-align: left;
-}
+  document.addEventListener('click', function (e) {
+    if (!menu.contains(e.target) &&
+        !btn.contains(e.target) &&
+        menu.classList.contains('show')) {
+      setExpanded(false);
+    }
+  });
 
-.nav-menu a:hover,
-.nav-menu button:hover {
-  background: rgba(255,255,255,0.08);
-}
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      setExpanded(false);
+    });
+  });
+})();
+</script>
 
-/* Language switch */
-.lang-switch {
-  display: flex;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-.lang-switch button {
-  background: rgba(255,255,255,0.14);
-  font-weight: 600;
-}
-
-.lang-switch button.active {
-  background: rgba(255,255,255,0.30);
-}
-
-/* ---------- HERO (MULTI LOCAL LAYERS) ---------- */
-.hero {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 90px auto 60px;
-  padding: 72px var(--gutter);
-  text-align: center;
-  border-radius: 16px;
-  color: #fff;
-
-  background:
-    linear-gradient(
-      rgba(7,42,54,0.88),
-      rgba(7,42,54,0.88)
-    ),
-    url("bg-hero.jpg");
-
-  background-size: cover;
-  background-position: center;
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-}
-
-/* Flora – sangat halus */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("bg-flora.png");
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 380px;
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* Fauna – lebih halus lagi */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("bg-fauna.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: 320px;
-  opacity: 0.035;
-  pointer-events: none;
-}
-
-.hero h1 {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 14px;
-}
-
-.hero .subtitle {
-  font-size: clamp(15px, 2vw, 18px);
-  opacity: 0.92;
-  margin-bottom: 28px;
-}
-
-/* small hero */
-.small-hero {
-  padding-top: 110px;
-  padding-bottom: 50px;
-}
-
-/* ---------- Buttons ---------- */
-.btn-primary {
-  display: inline-block;
-  padding: 13px 28px;
-  background: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-}
-
-.btn-primary:hover { opacity: 0.92; }
-
-/* ---------- Service ---------- */
-.service-list {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 20px var(--gutter) 60px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 24px;
-
-  background:
-    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-    url("bg-pattern.png");
-  background-size: 520px;
-}
-
-.service-card {
-  background: var(--surface);
-  padding: 26px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-}
-
-.service-card h3 {
-  margin-bottom: 10px;
-  font-size: 19px;
-  color: var(--primary-dark);
-}
-
-.service-card p {
-  font-size: 15px;
-  color: var(--text-muted);
-}
-
-/* ---------- Contact ---------- */
-.contact-section,
-.contact-container {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 40px var(--gutter) 60px;
-
-  background:
-    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-    url("bg-pattern.png");
-  background-size: 520px;
-}
-
-.contact-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 22px;
-}
-
-.contact-box {
-  background: var(--surface);
-  padding: 22px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-}
-
-/* ---------- Footer ---------- */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 14px;
-  color: #444;
-  border-top: 1px solid var(--border-soft);
-}
-
-/* ---------- Reduced Motion ---------- */
-@media (prefers-reduced-motion: reduce){
-  * { animation: none !important; transition: none !important; }
-}
+</body>
+</html>
