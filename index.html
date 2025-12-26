@@ -1,127 +1,80 @@
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arianoi – PT Sinar Langit Hanoi</title>
+/* ===============================
+   FINAL HEADER – POLISHED & SAFE
+   =============================== */
 
-  <link rel="stylesheet" href="../style.css">
-  <link rel="icon" type="image/png" href="../logo.png">
-</head>
-<body>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px var(--gutter);
 
-<header>
-  <div class="header-left">
-    <img src="../logo.png" alt="Logo PT Sinar Langit Hanoi">
-    <span class="brand">PT Sinar Langit Hanoi</span>
-  </div>
+  /* clean + depth (AMAN LOGO) */
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
 
-  <button id="hamburgerBtn"
-          class="hamburger"
-          aria-controls="menu"
-          aria-expanded="false"
-          aria-label="Buka atau tutup navigasi">
-    <span class="bar" aria-hidden="true"></span>
-    <span class="bar" aria-hidden="true"></span>
-    <span class="bar" aria-hidden="true"></span>
-  </button>
+/* BRAND BLOCK */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  <nav class="nav-menu" id="menu" aria-label="Navigasi utama" aria-hidden="true">
-    <a href="index.php" aria-current="page">Beranda</a>
-    <a href="service.php">Layanan</a>
-    <a href="contact.php">Kontak</a>
-    <a href="https://client.arianoi.com">Login Klien</a>
+/* LOGO – AMAN, TIDAK DIPAKSA */
+.header-left img {
+  height: 34px;          /* ukuran PASS */
+  width: auto;
+  object-fit: contain;
+}
 
-    <div class="lang-switch" role="group" aria-label="Ganti bahasa">
-      <button aria-pressed="false"
-              data-lang="en"
-              onclick="location.href='../en/index.php'">EN</button>
-      <button class="active"
-              aria-pressed="true"
-              data-lang="id">ID</button>
-    </div>
-  </nav>
-</header>
+/* BRAND TEXT */
+.header-left .brand {
+  font-weight: 800;
+  font-size: 16.5px;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
 
-<main>
+/* ===============================
+   HAMBURGER – EXECUTIVE FEEL
+   =============================== */
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>
-      Mendukung Pertumbuhan Bisnis<br>
-      Secara Strategis di Asia
-    </h1>
+.hamburger {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    <p class="subtitle">
-      Konsultasi manajemen dan pengembangan organisasi
-      dengan pendekatan profesional, terukur, dan berkelanjutan.
-    </p>
+.hamburger:hover {
+  background: rgba(11,60,77,0.06);
+}
 
-    <a href="service.php" class="btn-primary">
-      Lihat Layanan
-    </a>
-  </section>
+.hamburger .bar {
+  width: 21px;
+  height: 2.4px;
+  background: var(--primary-dark);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
 
-  <!-- ABOUT -->
-  <section class="contact-section" aria-labelledby="about-heading">
-    <h2 id="about-heading">Tentang Arianoi</h2>
-
-    <p>
-      <strong>PT Sinar Langit Hanoi</strong> melalui unit usaha
-      <strong>Arianoi</strong> bergerak di bidang
-      <strong>konsultasi manajemen (KBLI 70209)</strong>.
-    </p>
-
-    <p>
-      Kami membantu individu dan perusahaan dalam pengambilan
-      keputusan strategis, penyusunan sistem kerja, serta
-      penguatan fondasi bisnis di kawasan Asia Tenggara.
-    </p>
-  </section>
-
-</main>
-
-<footer>
-  © 2025 PT Sinar Langit Hanoi. Hak Cipta Dilindungi.
-</footer>
-
-<script>
-(function () {
-  const btn  = document.getElementById('hamburgerBtn');
-  const menu = document.getElementById('menu');
-
-  function setExpanded(state){
-    btn.setAttribute('aria-expanded', state);
-    menu.classList.toggle('show', state);
-    menu.setAttribute('aria-hidden', !state);
-    btn.classList.toggle('is-open', state);
-  }
-
-  btn.addEventListener('click', function () {
-    setExpanded(!menu.classList.contains('show'));
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menu.classList.contains('show')) {
-      setExpanded(false);
-    }
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!menu.contains(e.target) &&
-        !btn.contains(e.target) &&
-        menu.classList.contains('show')) {
-      setExpanded(false);
-    }
-  });
-
-  menu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      setExpanded(false);
-    });
-  });
-})();
-</script>
-
-</body>
-</html>
+.hamburger.is-open .bar:nth-child(1){
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.is-open .bar:nth-child(2){
+  opacity: 0;
+}
+.hamburger.is-open .bar:nth-child(3){
+  transform: translateY(-6px) rotate(-45deg);
+}
