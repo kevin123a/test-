@@ -1,0 +1,361 @@
+/* =========================================================
+   ARIANOI – FINAL POLISHED CORPORATE STYLE
+   Clean • Elegant • Asian Identity • Executive Feel
+   ========================================================= */
+
+/* ---------- Root Variables ---------- */
+:root{
+  --bg-main: #f4f6f8;
+  --surface: #ffffff;
+  --primary: #0b3c4d;
+  --primary-dark: #072a36;
+  --accent: #8b6f3d; /* batik gold */
+  --text-main: #1a1a1a;
+  --text-muted: #6b7280;
+  --border-soft: rgba(0,0,0,0.08);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 8px 22px rgba(0,0,0,0.08);
+  --shadow-card: 0 6px 18px rgba(0,0,0,0.12);
+
+  --header-height: 68px;
+  --gutter: 22px;
+  --max-width: 920px;
+
+  --font-main: "Inter", Arial, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background: var(--bg-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Images ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Header ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px var(--gutter);
+
+  /* tidak polos, tapi tetap terang */
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.96),
+      rgba(255,255,255,0.96)
+    ),
+    url("bg-pattern.png");
+
+  background-size: 360px;
+  background-repeat: repeat;
+
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.04),
+    0 8px 18px rgba(0,0,0,0.04);
+}
+
+/* ---------- Header Left (Brand Block) ---------- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* LOGO – tetap aman */
+.header-left img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* BRAND TEXT – diberi karakter */
+.header-left .brand {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+  position: relative;
+  padding-left: 2px;
+}
+
+/* underline identitas (sangat halus) */
+.header-left .brand::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 34px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--accent),
+    transparent
+  );
+  opacity: 0.65;
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.hamburger:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.hamburger .bar {
+  width: 22px;
+  height: 2.4px;
+  background: var(--primary-dark);
+  border-radius: 2px;
+  display: block;
+  transition: transform .25s ease, opacity .2s ease;
+}
+
+.hamburger.is-open .bar:nth-child(1){
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.is-open .bar:nth-child(2){
+  opacity: 0;
+}
+.hamburger.is-open .bar:nth-child(3){
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Navigation Menu ---------- */
+.nav-menu {
+  position: fixed;
+  top: 74px;
+  right: 16px;
+  min-width: 230px;
+  background: var(--primary);
+  color: #fff;
+  padding: 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-menu.show { display: flex; }
+
+.nav-menu a,
+.nav-menu button {
+  color: #fff;
+  text-decoration: none;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+.nav-menu a:hover,
+.nav-menu button:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* Language switch */
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.lang-switch button {
+  background: rgba(255,255,255,0.14);
+  font-weight: 600;
+}
+
+.lang-switch button.active {
+  background: rgba(255,255,255,0.30);
+}
+
+/* ---------- HERO (MULTI LOCAL LAYERS) ---------- */
+.hero {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 90px auto 60px;
+  padding: 72px var(--gutter);
+  text-align: center;
+  border-radius: 16px;
+  color: #fff;
+
+  background:
+    linear-gradient(
+      rgba(7,42,54,0.88),
+      rgba(7,42,54,0.88)
+    ),
+    url("bg-hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+/* Flora – sangat halus */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("bg-flora.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 380px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Fauna – lebih halus lagi */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("bg-fauna.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 320px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero .subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  opacity: 0.92;
+  margin-bottom: 28px;
+}
+
+/* small hero */
+.small-hero {
+  padding-top: 110px;
+  padding-bottom: 50px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-block;
+  padding: 13px 28px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover { opacity: 0.92; }
+
+/* ---------- Service ---------- */
+.service-list {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 20px var(--gutter) 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 24px;
+
+  background:
+    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+    url("bg-pattern.png");
+  background-size: 520px;
+}
+
+.service-card {
+  background: var(--surface);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 19px;
+  color: var(--primary-dark);
+}
+
+.service-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* ---------- Contact ---------- */
+.contact-section,
+.contact-container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 40px var(--gutter) 60px;
+
+  background:
+    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+    url("bg-pattern.png");
+  background-size: 520px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 22px;
+}
+
+.contact-box {
+  background: var(--surface);
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+  color: #444;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
