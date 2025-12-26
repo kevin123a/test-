@@ -85,37 +85,18 @@ header {
   position: relative;
 }
 
-/* LOGO – tetap aman */
+/* LOGO – DIPERKECIL & PROPORSIONAL */
 .header-left img {
-  height: 36px;
+  height: 36px;              /* sebelumnya 44px */
   width: auto;
-  object-fit: contain;
 }
 
-/* BRAND TEXT – diberi karakter */
+/* Brand text */
 .header-left .brand {
   font-weight: 800;
   font-size: 17px;
   letter-spacing: -0.02em;
   color: var(--primary-dark);
-  position: relative;
-  padding-left: 2px;
-}
-
-/* underline identitas (sangat halus) */
-.header-left .brand::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 34px;
-  height: 2px;
-  background: linear-gradient(
-    to right,
-    var(--accent),
-    transparent
-  );
-  opacity: 0.65;
 }
 
 /* ---------- Hamburger ---------- */
